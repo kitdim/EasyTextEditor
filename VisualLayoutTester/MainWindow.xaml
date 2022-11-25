@@ -78,6 +78,7 @@
                      VerticalScrollBarVisibility="Auto"
                      HorizontalScrollBarVisibility="Auto">
             </TextBox>
+            
         </Grid>
     </DockPanel>
 </Window>
