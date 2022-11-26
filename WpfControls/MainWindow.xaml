@@ -15,13 +15,13 @@
                         <Border Margin="0,2,0,2.4" Width="280" VerticalAlignment="Center">
                             <WrapPanel>
                                 <RadioButton x:Name="inkRadio" Margin="5,10"
-                                             Content="Ink Mode!" IsChecked="True"/>
-                                <RadioButton x:Name="eraseRadio" Margin="5,10" Content="Erase Mode"/>
-                                <RadioButton x:Name="selectRadio" Margin="5,10" Content="Select Mode"/>
+                                             Content="Ink Mode!" IsChecked="True" Click="RadioButtonClicked"/>
+                                <RadioButton x:Name="eraseRadio" Margin="5,10" Content="Erase Mode" Click="RadioButtonClicked"/>
+                                <RadioButton x:Name="selectRadio" Margin="5,10" Content="Select Mode" Click="RadioButtonClicked"/>
                             </WrapPanel>
                         </Border>
                         <Separator/>
-                        <ComboBox x:Name="comboColors" Width="175" Margin="10,0,0,0">
+                        <ComboBox x:Name="comboColors" Width="175" Margin="10,0,0,0" SelectionChanged="ColorChangen">
                             <ComboBoxItem Content="Red"/>
                             <ComboBoxItem Content="Green"/>
                             <ComboBoxItem Content="Blue"/>

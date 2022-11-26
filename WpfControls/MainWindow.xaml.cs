@@ -24,5 +24,15 @@ namespace WpfControls
         {
             InitializeComponent();
         }
+
+        private void RadioButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ColorChangen(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
