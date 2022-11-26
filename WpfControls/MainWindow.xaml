@@ -22,9 +22,21 @@
                         </Border>
                         <Separator/>
                         <ComboBox x:Name="comboColors" Width="175" Margin="10,0,0,0" SelectionChanged="ColorChangen">
-                            <ComboBoxItem Content="Red"/>
-                            <ComboBoxItem Content="Green"/>
-                            <ComboBoxItem Content="Blue"/>
+                            <StackPanel Orientation="Horizontal" Tag="Red">
+                                <Ellipse Fill="Red" Height="50" Width="50"/>
+                                <Label FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" Content="Red"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Tag="Green">
+                                <Ellipse Fill="Green" Height="50" Width="50"/>
+                                <Label FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" Content="Green"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Tag="Blue">
+                                <Ellipse Fill="Blue" Height="50" Width="50"/>
+                                <Label FontSize="20" HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" Content="Blue"/>
+                            </StackPanel>
                         </ComboBox>
                         <Separator/>
                         <Grid>

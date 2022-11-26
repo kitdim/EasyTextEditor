@@ -41,7 +41,8 @@ namespace WpfControls
 
         private void ColorChangen(object sender, SelectionChangedEventArgs e)
         {
-
+            string colorToUse = (this.comboColors.SelectedItem as StackPanel).Tag.ToString();
+            this.MyInkCanvas.DefaultDrawingAttributes.Color = (Color)ColorConverter.ConvertFromString(colorToUse);
         }
     }
 }
