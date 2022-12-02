@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
+using System.Windows.Ink;
 
 namespace WpfControls
 {
@@ -43,6 +34,30 @@ namespace WpfControls
         {
             string colorToUse = (this.comboColors.SelectedItem as StackPanel).Tag.ToString();
             this.MyInkCanvas.DefaultDrawingAttributes.Color = (Color)ColorConverter.ConvertFromString(colorToUse);
+        }
+
+        private void SaveData(object sender, RoutedEventArgs e)
+        {
+            using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Create))
+            {
+                this.MyInkCanvas.Strokes.Save(fs);
+                fs.Close();
+                MessageBox.Show("Image Saved", "Saved");
+            }
+        }
+
+        private void ClearData(object sender, RoutedEventArgs e)
+        {
+            using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Open, FileAccess.Read))
+            {
+                StrokeCollection strokes = new StrokeCollection(fs);
+                this.MyInkCanvas.Strokes = strokes;
+            }
+        }
+
+        private void LoadData(object sender, RoutedEventArgs e)
+        {
+            this.MyInkCanvas.Strokes.Clear();
         }
     }
 }
