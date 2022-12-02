@@ -46,11 +46,11 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <Button Grid.Column="0" x:Name="btnSave" Margin="10,10"
-                                    Width="70" Content="Save Data"/>
+                                    Width="70" Content="Save Data" Click="SaveData"/>
                             <Button Grid.Column="1" x:Name="btnLoad" Margin="10,10"
-                                    Width="70" Content="Load Data"/>
+                                    Width="70" Content="Load Data"  Click="LoadClick"/>
                             <Button Grid.Column="2" x:Name="bntClear" Margin="10,10"
-                                    Width="70" Content="Clear"/>
+                                    Width="70" Content="Clear" Click="ClearClick"/>
                         </Grid>
                     </ToolBar>
                     <InkCanvas x:Name="MyInkCanvas" Background="#FFB6F4F1"/>
@@ -60,6 +60,5 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-
     </Grid>
 </Window>
